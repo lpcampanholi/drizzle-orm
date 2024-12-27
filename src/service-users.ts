@@ -11,7 +11,7 @@ export async function readUsers() {
 export async function insertUsers() {
     const db = await getConnection();
     for (let i = 1; i <= 20; i++) {
-        await db.insert(users).values({ name: "name", age: i, email: `mail${i}@mail.com` })
+        await db.insert(users).values({ name: "name", age: Math.random() * 20 + 1, email: `mail${i}@mail.com` })
     }
 }
 

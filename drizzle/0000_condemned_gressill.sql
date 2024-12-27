@@ -1,7 +1,7 @@
 CREATE TABLE `posts` (
 	`id` serial AUTO_INCREMENT NOT NULL,
 	`content` text NOT NULL,
-	`user_id` int,
+	`user_id` int NOT NULL,
 	CONSTRAINT `posts_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint

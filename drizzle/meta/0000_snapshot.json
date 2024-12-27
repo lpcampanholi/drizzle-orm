@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "4524af6e-2a41-4ebe-bf57-1f76ce8e3ba0",
+  "id": "a5bdcd74-359e-4dfa-9e94-d7ce996fbf82",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "posts": {
@@ -25,7 +25,7 @@
           "name": "user_id",
           "type": "int",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         }
       },
