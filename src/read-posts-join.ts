@@ -10,7 +10,7 @@ import { users } from "./db/schema/users";
             postId: posts.id,
             postContent: posts.content,
             userName: users.name,
-            userAge: users.age,
+            userAge: users.age, 
             userEmail: users.email
         })
         .from(posts)
