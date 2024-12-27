@@ -8,6 +8,12 @@ export async function readPosts() {
     console.log(posts);
 }
 
+export async function readOnePost() {
+    const db = await getConnection();
+    const post = await db.query.postsTable.findFirst();
+    console.log(post);
+}
+
 export async function insertPosts() {
     const db = await getConnection();
     for (let i = 1; i <= 100; i++) {

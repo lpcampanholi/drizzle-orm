@@ -2,15 +2,13 @@ import { eq, gte } from "drizzle-orm";
 import { usersTable } from "./db/schema/users.ts";
 import { getConnection } from "./db/connection.ts";
 
-const db = getConnection();
-
 export  async function readUsers() {
     const db = await getConnection();
     const users = await db.select().from(usersTable);
     console.log(users);
 }
 
-export async function createUsers() {
+export async function insertUsers() {
     const db = await getConnection();
     for (let i = 1; i <= 20; i++) {
         await db.insert(usersTable).values({name: "name", age: i, email: `mail${i}@mail.com`})
