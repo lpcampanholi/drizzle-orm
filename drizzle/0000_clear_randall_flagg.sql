@@ -1,3 +1,10 @@
+CREATE TABLE `posts` (
+	`id` serial AUTO_INCREMENT NOT NULL,
+	`content` text NOT NULL,
+	`user_id` int,
+	CONSTRAINT `posts_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
 CREATE TABLE `users` (
 	`id` serial AUTO_INCREMENT NOT NULL,
 	`name` varchar(255) NOT NULL,

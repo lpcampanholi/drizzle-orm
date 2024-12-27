@@ -1,28 +1,28 @@
 import { eq, gte } from "drizzle-orm";
-import { usersTable } from "./db/schema/users.ts";
+import { users } from "./db/schema/users.ts";
 import { getConnection } from "./db/connection.ts";
 
-export  async function readUsers() {
+export async function readUsers() {
     const db = await getConnection();
-    const users = await db.select().from(usersTable);
-    console.log(users);
+    const allUsers = await db.select().from(users);
+    console.log(allUsers);
 }
 
 export async function insertUsers() {
     const db = await getConnection();
     for (let i = 1; i <= 20; i++) {
-        await db.insert(usersTable).values({name: "name", age: i, email: `mail${i}@mail.com`})
+        await db.insert(users).values({ name: "name", age: i, email: `mail${i}@mail.com` })
     }
 }
 
 export async function updateUsers() {
     const db = await getConnection();
     for (let i = 1; i <= 100; i++) {
-        await db.update(usersTable).set({ age: 50 }).where(gte(usersTable.age, 20));
+        await db.update(users).set({ age: 50 }).where(gte(users.age, 20));
     }
 }
 
 export async function deleteUsers() {
     const db = await getConnection();
-    await db.delete(usersTable).where(eq(usersTable.age, 50));
+    await db.delete(users).where(eq(users.age, 50));
 }

@@ -4,4 +4,5 @@ import { insertUsers } from "./service-users";
 (async () => {
     await insertUsers();
     await insertPosts();
+    console.log("Terminou");
 })();
